@@ -22,6 +22,15 @@ Private Sub ModuleCleanup()
     Set Fakes = Nothing
 End Sub
 
+'@TestMethod("AreYouPlayingBanjo")
+Private Sub AreYouPlayingBanjo()
+    Assert.AreEqual Kata.AreYouPlayingBanjo("Martin"), "Martin does not play banjo"
+    Assert.AreEqual Kata.AreYouPlayingBanjo("Rikke"), "Rikke plays banjo"
+    Assert.AreEqual Kata.AreYouPlayingBanjo("bravo"), "bravo does not play banjo"
+    Assert.AreEqual Kata.AreYouPlayingBanjo("rolf"), "rolf plays banjo"
+End Sub
+
+
 '@TestMethod("HowMuchILoveYou")
 Private Sub HowMuchILoveYou()
     Assert.AreEqual Kata.HowMuchILoveYou(7), "I love you"

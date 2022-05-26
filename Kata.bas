@@ -9,9 +9,23 @@ End Function
 
 Sub Test()
   
-  Debug.Print PascalsTriangle(3)(1) = 3^
+  Debug.Print AreYouPlayingBanjo("rolf")
   
 End Sub
+
+Public Function AreYouPlayingBanjo(name As String) As String
+  Dim regex As New regExp
+  regex.Pattern = "^r"
+  regex.IgnoreCase = True
+  
+  If regex.Test(name) Then AreYouPlayingBanjo = name + " plays banjo": Exit Function
+  AreYouPlayingBanjo = name + " does not play banjo"
+End Function
+
+'Public Function AreYouPlayingBanjo(name As String) As String
+'  If Left(name, 1) = "R" Or Left(name, 1) = "r" Then AreYouPlayingBanjo = name + " plays banjo": Exit Function
+'  AreYouPlayingBanjo = name + " does not play banjo"
+'End Function
 
 Public Function PascalsTriangle(ByVal n As Integer) As Variant
   If n = 0 Then PascalsTriangle = Array(1^): Exit Function
