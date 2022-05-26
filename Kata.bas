@@ -1,14 +1,21 @@
 Attribute VB_Name = "Kata"
 Option Explicit
 
-Sub Main()
-  PascalsTriangle (3)
+
+
+Public Function HowMuchILoveYou(ByVal nb_petals As Integer) As String
+  HowMuchILoveYou = Array("not at all", "I love you", "a little", "a lot", "passionately", "madly")(nb_petals Mod 6)
+End Function
+
+Sub Test()
+  
+  Debug.Print PascalsTriangle(3)(1) = 3^
   
 End Sub
 
 Public Function PascalsTriangle(ByVal n As Integer) As Variant
-  If n = 0 Then PascalsTriangle = Array(1): Exit Function
-  If n = 1 Then PascalsTriangle = Array(1, 1): Exit Function
+  If n = 0 Then PascalsTriangle = Array(1^): Exit Function
+  If n = 1 Then PascalsTriangle = Array(1^, 1^): Exit Function
   
   ReDim PrevArr(0 To n) As LongLong
   ReDim CurrArr(0 To n) As LongLong
@@ -31,10 +38,6 @@ Public Function PascalsTriangle(ByVal n As Integer) As Variant
   PascalsTriangle = CurrArr
   
 End Function
-
-Sub Test()
-  EasyLine (7)
-End Sub
 
 Public Function EasyLine(ByVal n As Integer) As LongLong
     Dim sum As LongLong

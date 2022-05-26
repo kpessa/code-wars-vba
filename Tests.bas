@@ -22,14 +22,22 @@ Private Sub ModuleCleanup()
     Set Fakes = Nothing
 End Sub
 
+'@TestMethod("HowMuchILoveYou")
+Private Sub HowMuchILoveYou()
+    Assert.AreEqual Kata.HowMuchILoveYou(7), "I love you"
+    Assert.AreEqual Kata.HowMuchILoveYou(3), "a lot"
+    Assert.AreEqual Kata.HowMuchILoveYou(6), "not at all"
+End Sub
+
+
 '@TestMethod("PascalsTriangle")
 Private Sub PascalsTriangle()
-    Assert.SequenceEquals Array(1), Kata.PascalsTriangle(0)
-    Assert.SequenceEquals Array(1, 1), Kata.PascalsTriangle(1)
-    Assert.SequenceEquals Array(1, 2, 1), Kata.PascalsTriangle(2)
-    Assert.SequenceEquals Array(1, 3, 3, 1), Kata.PascalsTriangle(3)
-    Assert.SequenceEquals Array(1, 4, 6, 4, 1), Kata.PascalsTriangle(4)
-    Assert.SequenceEquals Array(1, 5, 10, 10, 5, 1), Kata.PascalsTriangle(5)
+    Assert.SequenceEquals Array(1^), Kata.PascalsTriangle(0)
+    Assert.SequenceEquals Array(1^, 1^), Kata.PascalsTriangle(1)
+    Assert.SequenceEquals Array(1^, 2^, 1^), Kata.PascalsTriangle(2)
+    Assert.SequenceEquals Array(1^, 3^, 3^, 1^), Kata.PascalsTriangle(3)
+    Assert.SequenceEquals Array(1^, 4^, 6^, 4^, 1^), Kata.PascalsTriangle(4)
+    Assert.SequenceEquals Array(1^, 5^, 10^, 10^, 5^, 1^), Kata.PascalsTriangle(5)
 End Sub
 
 '@TestMethod("EasyLineTests")
