@@ -22,6 +22,20 @@ Private Sub ModuleCleanup()
     Set Fakes = Nothing
 End Sub
 
+'@TestMethod("BmiAsString")
+Private Sub BmiAsString()
+  Assert.AreEqual Kata.BmiAsString(24.7), "Normal"
+  Assert.AreEqual Kata.BmiAsString(18.5), "Underweight"
+  Assert.AreEqual Kata.BmiAsString(25), "Normal"
+  Assert.AreEqual Kata.BmiAsString(30), "Overweight"
+  Assert.AreEqual Kata.BmiAsString(31), "Obese"
+End Sub
+
+'@TestMethod("Bmi")
+Private Sub bmi()
+  Assert.AreEqual Round(Kata.bmi(80, 1.8)), Round(24.7)
+End Sub
+
 '@TestMethod("StringToNumber")
 Private Sub StringToNumber()
   Assert.AreEqual Kata.StringToNumber("1234"), 1234

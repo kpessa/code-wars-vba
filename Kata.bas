@@ -1,17 +1,35 @@
 Attribute VB_Name = "Kata"
 Option Explicit
 
+Public Function BmiAsString(bmi As Double) As String
+  Select Case bmi
+    Case Is <= 18.5
+      BmiAsString = "Underweight"
+    Case 18.5 To 25
+      BmiAsString = "Normal"
+    Case 25 To 30
+      BmiAsString = "Overweight"
+    Case Is >= 30
+      BmiAsString = "Obese"
+  End Select
+End Function
 
+Public Function bmi(weight As Double, height As Double) As Double
+  If height = 0 Then Err.Raise Number:=11, Description:="BMI Calculation tried to divide by zero"
+  If weight < 0 Or height < 0 Then Err.Raise Number:=1004, Description:="During BMI calculation, either height or weight was negative, which doesn't make sense"
+  bmi = weight / height / height
+  If bmi > 40 Then MsgBox "BMI Calculation resulted in BMI > 40, which is morbidly obese.  Does this make sense?", vbExclamation
+  If bmi < 15 Then MsgBox "BMI Calculation resulted in BMI < 15, which is morbidly obese.  Does this make sense?", vbExclamation
+  
+End Function
+
+Public Sub Test()
+  bmi 14, 1
+End Sub
 
 Public Function HowMuchILoveYou(ByVal nb_petals As Integer) As String
   HowMuchILoveYou = Array("not at all", "I love you", "a little", "a lot", "passionately", "madly")(nb_petals Mod 6)
 End Function
-
-Sub Test()
-  
-  Debug.Print AreYouPlayingBanjo("rolf")
-  
-End Sub
 
 Public Function StringToNumber(s As String) As Integer
   StringToNumber = CInt(s)
