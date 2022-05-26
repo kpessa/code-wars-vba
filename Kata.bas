@@ -13,6 +13,10 @@ Sub Test()
   
 End Sub
 
+Public Function StringToNumber(s As String) As Integer
+  StringToNumber = CInt(s)
+End Function
+
 Public Function AreYouPlayingBanjo(name As String) As String
   Dim regex As New regExp
   regex.Pattern = "^r"

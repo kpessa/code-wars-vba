@@ -22,6 +22,14 @@ Private Sub ModuleCleanup()
     Set Fakes = Nothing
 End Sub
 
+'@TestMethod("StringToNumber")
+Private Sub StringToNumber()
+  Assert.AreEqual Kata.StringToNumber("1234"), 1234
+  Assert.AreEqual Kata.StringToNumber("605"), 605
+  Assert.AreEqual Kata.StringToNumber("1405"), 1405
+  Assert.AreEqual Kata.StringToNumber("-7"), -7
+End Sub
+
 '@TestMethod("AreYouPlayingBanjo")
 Private Sub AreYouPlayingBanjo()
     Assert.AreEqual Kata.AreYouPlayingBanjo("Martin"), "Martin does not play banjo"
