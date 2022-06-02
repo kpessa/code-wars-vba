@@ -22,6 +22,14 @@ Private Sub ModuleCleanup()
     Set Fakes = Nothing
 End Sub
 
+'@TestMethod("CountBy")
+Private Sub CountBy()
+    Assert.SequenceEquals Array(1, 2, 3, 4, 5), Kata.CountBy(1, 5)
+    Assert.SequenceEquals Array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10), Kata.CountBy(1, 10)
+    Assert.SequenceEquals Array(2, 4, 6, 8, 10), Kata.CountBy(2, 5)
+End Sub
+
+
 '@TestMethod("BmiAsString")
 Private Sub BmiAsString()
   Assert.AreEqual Kata.BmiAsString(24.7), "Normal"

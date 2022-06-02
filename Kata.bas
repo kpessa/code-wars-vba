@@ -1,6 +1,17 @@
 Attribute VB_Name = "Kata"
 Option Explicit
 
+Public Function CountBy(x As Integer, n As Integer)
+  ReDim arr(0 To n - 1) As Variant
+  
+  Dim i As Integer
+  For i = 0 To n - 1
+    arr(i) = (i + 1) * x
+  Next
+  
+  CountBy = arr
+End Function
+
 Public Function BmiAsString(bmi As Double) As String
   Select Case bmi
     Case Is <= 18.5
